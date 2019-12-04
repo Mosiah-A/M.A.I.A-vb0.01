@@ -1,0 +1,23 @@
+from random import uniform
+
+a = 'OI'
+b = 'Ola'
+c = 'Eai'
+d = 'Ei'
+e = ' '
+r = int(uniform(0, 100))
+if (r < 48):
+    s = 'Oi'
+else:
+    if (r < 52 ):
+        s = 'Olá'
+    else:
+        if (r < 84):
+            s = 'Eai'
+        else:
+            if (r < 92):
+                s = 'Ei'
+            else:
+                if (r > 100):
+                    s = ' '
+print(s, 'Eu sou M.A.I.A ')
