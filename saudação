@@ -1,26 +1,17 @@
-from random import uniform
- 
- 
+ from random import uniform
+
+
 inter = ['Oi', 'Ola', 'Eai', 'Ei', '']
- 
+
 r = int(uniform(0, 100))
 if (r < 48):
     s = inter[0]
- 
- 
-else:
-    if (r < 52 ):
-        s = inter[1]
- 
-    else:
-        if (r < 84):
-            s = inter[2]
-        else:
-            if (r < 92):
-                s = inter[3]
-
-            else:
-                if (r > 100):
-                    s = inter[4]
+elif (r < 52 ):
+    s = inter[1]
+elif (r < 84):
+    s = inter[2]
+elif (r < 92):
+    s = inter[3]
+elif (r > 100):
+    s = inter[4]
 print('{} Eu sou M.A.I.A '.format(s))
- 
