@@ -1,5 +1,5 @@
 #importaçoes
-import pymysql
+
 from random import uniform
 
 #interjeição
@@ -17,39 +17,74 @@ elif (r < 92):
 elif (r > 100):
     s = inter[4]
 
-
-
 #CODIGO PRINCIPAL
-sexo = str(input('você é de qual sexo? [M/F] ')).strip().upper()
-nome = str(input('Qual seu nome? ')).strip().title().split()
-if(sexo == 'F'):
-    sexo='Feminino'
-    print('{}, é um prazer Sra. {}'.format(s, nome[0]))
-else:
-    sexo = 'Masculino'
-    print('{} é um prazer Sr. {}'.format(s, nome[0]))
-idade = int((input('Quantos anos você tem? ')))
 
-#BANCO DE DADOS
+r=1
+while r != 0:
+    print('''Qual sua escolha:
+    [1] Novo Usuario
+    [2] Login Admin
+    [0] Sair''')
+    r = int(input())
 
-#conexaocom oservidor
-conexao = pymysql.connect(
-    host='localhost',
-    user = 'root',
-    password = '',
-    database = 'm.a.i.a'
-)
+#Novo Usuario
 
-#execução de comandos
+    if r == 1:
+        sexo = str(input('você é de qual sexo? [M/F] ')).strip().upper()
+        nome = str(input('Qual seu nome? ')).strip().title().split()
+        if(sexo == 'F'):
+            sexo='Feminino'
+            print('{}, é um prazer Sra. {}'.format(s, nome[0]))
+        else:
+            sexo = 'Masculino'
+            print('{} é um prazer Sr. {}'.format(s, nome[0]))
+        idade = int((input('Quantos anos você tem? ')))
 
-cursor = conexao.cursor()
+        #BANCO DE DADOS
+        import pymysql
 
-#instrução sql
+        #conexaocom oservidor
+        conexao = pymysql.connect(
+        host='localhost',
+        user = 'root',
+        password = '',
+        database = 'm.a.i.a'
+        )
 
-com_sql = "INSERT INTO usuarios (nome, sexo, idade) VALUES (%s, %s, %s)"
-valor = (nome, sexo, idade)
-cursor.execute(com_sql, valor)
+        #execução de comandos
 
-conexao.commit()
+        cursor = conexao.cursor()
 
-print(cursor.rowcount, "informação inserida")
+        #instrução sql
+
+        com_sql = "INSERT INTO usuarios (nome, sexo, idade) VALUES (%s, %s, %s)"
+        valor = (nome, sexo, idade)
+        cursor.execute(com_sql, valor)
+
+        conexao.commit()
+
+        print(cursor.rowcount, "informação inserida")
+
+#Usuario Admin
+
+    elif r == 2:
+        login = 'mosiah'
+        senha = 'adms7777'
+        login1 = input('Login: ')
+        senha1 = input('Senha: ')
+        if senha == senha1 and login == login1:
+            print('Entrou.')
+            print('{}, Mosiah.'.format(s))
+            print('''O que deseja fazer? 
+    [0] Sair''')
+            r = int(input())
+        else:
+            print('Senha Invalida')
+
+#sair
+
+    elif r == 0:
+        print('Saindo...')
+    else:
+        print('Erro, Tente novamente!')
+    print('=-'*30)
