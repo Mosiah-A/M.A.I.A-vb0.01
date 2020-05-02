@@ -55,7 +55,7 @@ while r != 0:
 
         cursor = conexao.cursor()
 
-        #instrução sql
+        #instrução sql1
 
         com_sql = "INSERT INTO usuarios (nome, sexo, idade) VALUES (%s, %s, %s)"
         valor = (nome, sexo, idade)
