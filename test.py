@@ -1,6 +1,6 @@
 import pymysql
 
-con= pymysql.connect(
+con = pymysql.connect(
     host='localhost',
     user='root',
     password='',

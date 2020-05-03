@@ -18,6 +18,7 @@ elif (r > 100):
     s = inter[4]
 
 #CODIGO PRINCIPAL
+print('\033[31m ATENÇÃO ATIVE O SERVIDOR LOCAL WAMPP\033[m')
 
 r=1
 while r != 0:
@@ -38,9 +39,9 @@ while r != 0:
         else:
             sexo = 'Masculino'
             print('{} é um prazer Sr. {}'.format(s, nome[0]))
-        idade = int((input('Quantos anos você tem? ')))
+        anoDeNascimento = int((input('Qual ano você nasceu? ')))
 
-        #BANCO DE DADOS
+        #BANCO DE DADOS1
         import pymysql
 
         #conexaocom oservidor
@@ -56,9 +57,18 @@ while r != 0:
         cursor = conexao.cursor()
 
         #instrução sql1
+        criarTabela = cursor.execute('''CREATE TABLE if not exists usuarios (
+    id int(3) auto_increment,
+    nome varchar(30) ,
+    sexo varchar (1),
+    nascimento int(4),
+    primary key (id)
+)default charset = utf8;''')
+        #cursor.execute(criarTabela)
+        #conexao.commit()
 
-        com_sql = "INSERT INTO usuarios (nome, sexo, idade) VALUES (%s, %s, %s)"
-        valor = (nome, sexo, idade)
+        com_sql = "INSERT INTO usuarios (nome, sexo, nascimento) VALUES (%s, %s, %s)"
+        valor = (nome, sexo, anoDeNascimento)
         cursor.execute(com_sql, valor)
 
         conexao.commit()
