@@ -8,6 +8,6 @@ probabilidade feita por meio de uma pesquisa feita por mim.
 *OBS*: Execute o codigo ficha no Pycharm
 ***
 ## Mudanças
-se quiser modificar e sugerir melhorias fiquem a vontade
+se quiser modificar e sugerir melhorias fiquem a vontade :cat:
 
     
