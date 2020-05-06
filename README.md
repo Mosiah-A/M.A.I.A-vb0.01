@@ -1,5 +1,5 @@
 # M.A.I.A
-___
+
 **M.A.I.A** é uma **inteligencia artificial** em desemvolvimento que é capaz de por 
 enqanto é capaz de __manipular__ dados do banco de dado adicionar usuarios, ela 
 usa a interjeição de forma humanizada por meio de um calculo de 
