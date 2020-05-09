@@ -3,6 +3,9 @@
 enqanto é capaz de __manipular__ dados do banco de dado adicionar usuarios, ela 
 usa a interjeição de forma humanizada por meio de um calculo de 
 probabilidade feita por meio de uma pesquisa feita por mim.
+
+***
+
 ## Interjeição
 A interjeição dela foi calculada por meio de uma força de probabilidade que possamos usar certas interjeiçoes
 
@@ -16,7 +19,7 @@ A interjeição dela foi calculada por meio de uma força de probabilidade que p
 
 
 
-
+***
 *OBS*: Execute o codigo ficha no Pycharm
 ***
 ## Mudanças
